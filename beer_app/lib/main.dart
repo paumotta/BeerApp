@@ -1,4 +1,4 @@
-
+import 'package:beer_app/widgets/all_pages.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,6 +14,9 @@ class MyBeerApp extends StatefulWidget {
 
 class _MyBeerAppState extends State<MyBeerApp> {
   int actualPage = 0; 
+
+  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,8 +25,11 @@ class _MyBeerAppState extends State<MyBeerApp> {
         backgroundColor: Colors.deepOrange,
         appBar: AppBar(
             title: const Text('BeerApp'),
-            backgroundColor: const Color.fromARGB(255, 255, 162, 134)),
-    
+            backgroundColor: const Color.fromARGB(255, 255, 162, 134),
+          ),
+
+        body: pages[actualPage],
+
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: const Color.fromARGB(255, 255, 162, 134),
           onTap: (index){
@@ -38,6 +44,7 @@ class _MyBeerAppState extends State<MyBeerApp> {
             BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favourites'),
           ],
         ),
+      
       ),
     );
   }
