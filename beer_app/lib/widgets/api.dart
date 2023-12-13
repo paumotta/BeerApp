@@ -9,10 +9,12 @@ Future<List<Beer>> apiLoadBeer()async{
   final List<Beer> beer =[];
 
   if (response.statusCode==200){
-    final jsonData = jsonDecode(response.body);
-    for(var item in jsonData[]){
-       beer.add(Beer(item["id"], item["name"], item["tagline"],item["beerUrl"] , item["description"]));
+    final json = jsonDecode(response.body);
+    final List jsonData = json;
+    for(var item in jsonData){
+       beer.add(Beer.fromJson(item));
     }
+    return beer;
 
   }else{
     throw Exception("La conexión ta mal");

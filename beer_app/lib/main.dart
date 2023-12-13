@@ -1,4 +1,6 @@
+import 'package:beer_app/model/beer_type.dart';
 import 'package:beer_app/widgets/all_pages.dart';
+import 'package:beer_app/widgets/api.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,10 +15,6 @@ class MyBeerApp extends StatefulWidget {
 }
 
 class _MyBeerAppState extends State<MyBeerApp> {
- 
-
-  
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,15 +22,28 @@ class _MyBeerAppState extends State<MyBeerApp> {
       home: Scaffold(
         backgroundColor: Colors.deepOrange,
         appBar: AppBar(
-            title: const Text('BeerApp'),
-            backgroundColor: const Color.fromARGB(255, 255, 162, 134),
-          ),
-
-        body: pages[actualPage],
+          title: const Text('BeerApp'),
+          backgroundColor: const Color.fromARGB(255, 255, 162, 134),
+        ),
+        body: FutureBuilder(
+          future: apiLoadBeer(),
+          builder: (
+            BuildContext context,
+            AsyncSnapshot<List<Beer>> snapshot,
+          ) {
+            if (!snapshot.hasData) {
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+            return pages[actualPage];
+          }
+          
+        ),
 
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: const Color.fromARGB(255, 255, 162, 134),
-          onTap: (index){
+          onTap: (index) {
             setState(() {
               actualPage = index;
             });
@@ -41,10 +52,10 @@ class _MyBeerAppState extends State<MyBeerApp> {
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
             BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-            BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favourites'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.favorite), label: 'Favourites'),
           ],
         ),
-      
       ),
     );
   }
