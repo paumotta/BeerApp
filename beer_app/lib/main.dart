@@ -13,7 +13,7 @@ class MyBeerApp extends StatefulWidget {
 }
 
 class _MyBeerAppState extends State<MyBeerApp> {
-  int actualPage = 0; 
+ 
 
   
 
