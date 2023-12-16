@@ -26,21 +26,20 @@ class _MyBeerAppState extends State<MyBeerApp> {
           backgroundColor: const Color.fromARGB(255, 255, 162, 134),
         ),
         body: FutureBuilder(
-          future: apiLoadBeer(),
-          builder: (
-            BuildContext context,
-            AsyncSnapshot<List<Beer>> snapshot,
-          ) {
-            if (!snapshot.hasData) {
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
-            }
-            return pages[actualPage];
-          }
-          
-        ),
-
+            future: apiLoadBeer(),
+            builder: (
+              BuildContext context,
+              AsyncSnapshot<List<Beer>> snapshot,
+            ) {
+              if (!snapshot.hasData) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+              final beerList =
+                  snapshot.data!; //CAMBIAR A INFO MAIN GENERALIZADO
+              return pages[actualPage];
+            }),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: const Color.fromARGB(255, 255, 162, 134),
           onTap: (index) {
