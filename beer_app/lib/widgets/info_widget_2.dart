@@ -13,10 +13,10 @@ class InfoWidget_2 extends StatelessWidget {
     return ElevatedButton(
       onPressed: () {
         // Acción al presionar el botón
-        print('Botón presionado');
+        
       },
       style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.all(15),
+        padding: const EdgeInsets.all(15),
         backgroundColor: Colors.deepOrange[700],
       ),
       child: Padding(

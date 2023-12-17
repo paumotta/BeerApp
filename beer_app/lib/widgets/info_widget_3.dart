@@ -16,7 +16,7 @@ class InfoWidget_3 extends StatelessWidget {
         print('Botón presionado');
       },
       style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.all(15),
+        padding: const EdgeInsets.all(15),
         backgroundColor: Colors.deepOrange[700],
       ),
       child: Padding(

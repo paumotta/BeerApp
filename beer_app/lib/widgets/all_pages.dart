@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 List <Widget> pages = [
     const HomePage(),
+    const SearchPage(),
     const FavPage(),
-    const SearchPage()
 
   ];

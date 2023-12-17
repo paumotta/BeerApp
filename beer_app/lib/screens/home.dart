@@ -30,15 +30,15 @@ class HomePage extends StatelessWidget {
           scrollDirection: Axis.vertical,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.all(14),
+              padding: const EdgeInsetsDirectional.all(14),
               child: Row(
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Padding(
+                      const Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0, 0, 10, 10),
+                            EdgeInsetsDirectional.fromSTEB(0, 0, 10, 10),
                         child: Text(
                           "Categoria",
                           style: TextStyle(
@@ -74,9 +74,11 @@ class HomePage extends StatelessWidget {
             const Divider(
               color: Color.fromARGB(255, 226, 78, 32),
               thickness: 6,
+              endIndent: 15,
+              indent: 15,
             ),
             Padding(
-              padding: EdgeInsetsDirectional.all(10),
+              padding: const EdgeInsetsDirectional.all(10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -90,17 +92,19 @@ class HomePage extends StatelessWidget {
             const Divider(
               color: Color.fromARGB(255, 226, 78, 32),
               thickness: 6,
+              endIndent: 15,
+              indent: 15,
             ),
             Padding(
-              padding: EdgeInsetsDirectional.all(14),
+              padding: const EdgeInsetsDirectional.all(14),
               child: Row(
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Padding(
+                      const Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0, 0, 10, 10),
+                            EdgeInsetsDirectional.fromSTEB(0, 0, 10, 10),
                         child: Text(
                           "Favoritos",
                           style: TextStyle(

@@ -36,8 +36,7 @@ class _MyBeerAppState extends State<MyBeerApp> {
                   child: CircularProgressIndicator(),
                 );
               }
-              final beerList =
-                  snapshot.data!; //CAMBIAR A INFO MAIN GENERALIZADO
+              final beerList = snapshot.data!; //CAMBIAR A INFO MAIN GENERALIZADO
               return pages[actualPage];
             }),
         bottomNavigationBar: BottomNavigationBar(
@@ -51,8 +50,7 @@ class _MyBeerAppState extends State<MyBeerApp> {
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
             BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.favorite), label: 'Favourites'),
+            BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favourites'),
           ],
         ),
       ),

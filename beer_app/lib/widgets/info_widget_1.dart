@@ -16,7 +16,7 @@ class InfoWidget_1 extends StatelessWidget {
         print('Botón presionado');
       },
       style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.all(15),
+        padding: const EdgeInsets.all(15),
         backgroundColor: Colors.deepOrange[700],
       ),
       child: Padding(
@@ -37,10 +37,10 @@ class InfoWidget_1 extends StatelessWidget {
                 children: [
                   Text(
                     "${beer.name}",
-                    style: TextStyle(fontSize: 10.0),
+                    style: const TextStyle(fontSize: 10.0),
                   ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                  const Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                     child: Icon(
                       Icons.bookmark_border,
                       size: 12,
