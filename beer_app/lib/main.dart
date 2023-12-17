@@ -25,8 +25,9 @@ class _MyBeerAppState extends State<MyBeerApp> {
       routes:  {
         'home': ( _ ) => const HomePage(),
         'my_beer_info': ( _ ) => const BeerInfoPage(),
-        
       },
+
+      
       home: Scaffold(
         backgroundColor: Colors.deepOrange,
         appBar: AppBar(
