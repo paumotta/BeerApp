@@ -27,13 +27,16 @@ class _SearchPageState extends State<SearchPage> {
       {'name':'ALE12','image_url':'https://images.punkapi.com/v2/2.png','tagline':'A Real Bitter Experience.'},
       {'name':'ALE13','image_url':'https://images.punkapi.com/v2/2.png','tagline':'A Real Bitter Experience.'},
     ];
+
+    /* No me esta funcionando y nose ni el porque
     List<Map<String,dynamic>> searchedBeer=[];
-      @override
+
+    @override
       initState(){
-        searchedBeer =allBeer;
-        super.initState();
-      }
-    
+      searchedBeer =allBeer;
+      super.initState();
+    }
+    */
     void runFilter(String keyWordEntered) {
       List <Map<String,dynamic>> results = [];
       if (keyWordEntered.isEmpty){results =allBeer;}
@@ -44,10 +47,10 @@ class _SearchPageState extends State<SearchPage> {
         .toList();
       }
       
-      setState(() {
+      /*setState(() {
         searchedBeer=results;
       });
-      
+      */
     }
 
     return Scaffold(

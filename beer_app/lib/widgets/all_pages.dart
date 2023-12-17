@@ -1,3 +1,4 @@
+import 'package:beer_app/screens/beerInfo.dart';
 import 'package:beer_app/screens/fav.dart';
 import 'package:beer_app/screens/home.dart';
 import 'package:beer_app/screens/search.dart';
@@ -9,5 +10,6 @@ List <Widget> pages = [
     const HomePage(),
     const SearchPage(),
     const FavPage(),
+    const BeerInfoPage(),
 
   ];

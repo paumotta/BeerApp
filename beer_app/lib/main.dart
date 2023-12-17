@@ -1,4 +1,6 @@
 import 'package:beer_app/model/beer_type.dart';
+import 'package:beer_app/screens/beerInfo.dart';
+import 'package:beer_app/screens/home.dart';
 import 'package:beer_app/widgets/all_pages.dart';
 import 'package:beer_app/widgets/api.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +21,12 @@ class _MyBeerAppState extends State<MyBeerApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      initialRoute: 'Home',
+      routes:  {
+        'home': ( _ ) => const HomePage(),
+        'my_beer_info': ( _ ) => const BeerInfoPage(),
+        
+      },
       home: Scaffold(
         backgroundColor: Colors.deepOrange,
         appBar: AppBar(

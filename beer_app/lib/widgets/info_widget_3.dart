@@ -1,4 +1,5 @@
 import 'package:beer_app/model/beer_type.dart';
+import 'package:beer_app/widgets/all_pages.dart';
 import 'package:flutter/material.dart';
 
 class InfoWidget_3 extends StatelessWidget {
@@ -12,7 +13,7 @@ class InfoWidget_3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        // Acción al presionar el botón
+        
         print('Botón presionado');
       },
       style: ElevatedButton.styleFrom(
