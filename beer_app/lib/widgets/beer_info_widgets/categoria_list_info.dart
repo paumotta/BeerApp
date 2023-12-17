@@ -7,9 +7,11 @@ class HorizontalList extends StatelessWidget {
   const HorizontalList({
     super.key,
     required this.beerList,
+    
   });
 
   final List<Beer> beerList;
+  
 
   @override
   Widget build(BuildContext context) {

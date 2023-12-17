@@ -1,8 +1,9 @@
 import 'package:beer_app/model/beer_type.dart';
 import 'package:beer_app/widgets/api.dart';
-import 'package:beer_app/widgets/info_widget_1.dart';
-import 'package:beer_app/widgets/info_widget_2.dart';
-import 'package:beer_app/widgets/info_widget_3.dart';
+import 'package:beer_app/widgets/beer_info_widgets/categoria_list_info.dart';
+
+import 'package:beer_app/widgets/beer_info_widgets/info_widget_2.dart';
+import 'package:beer_app/widgets/beer_info_widgets/info_widget_3.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -27,60 +28,52 @@ class HomePage extends StatelessWidget {
         }
         final beerList = snapshot.data!;
         return SafeArea(
-                child: Container(
-                  margin: const EdgeInsets.only(right: 15,left: 15,top: 15),
-                  child: 
-                    ListView(
-                      children: [
-                        HorizontalList(beerList: beerList),
-                      ],
-                    ),
-                    
+          child: Container(
+            margin: const EdgeInsets.only(right: 15, left: 15, top: 15),
+            child: ListView(
+              children: [
+                HorizontalList(
+                  beerList: beerList,
                 ),
-              
-            
-        );
-      },
-    );
-  }
-}
-
-class HorizontalList extends StatelessWidget {
-  const HorizontalList({
-    super.key,
-    required this.beerList,
-  });
-
-  final List<Beer> beerList;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: <Widget>[
-        const Padding(
-          padding: EdgeInsets.only(bottom:10),
-          child: Text(
-            'Categoria',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
+                const Divider(
+                  indent: 15,
+                  endIndent: 15,
+                  thickness: 2,
+                  color: Color.fromARGB(255, 71, 71, 71),
+                ),
+                SizedBox(height: 200, child: InfoWidget_2(beer: beerList[11])),
+                HorizontalList(
+                  beerList: beerList,
+                ),
+                const Divider(
+                  indent: 15,
+                  endIndent: 15,
+                  thickness: 2,
+                  color: Color.fromARGB(255, 71, 71, 71),
+                ),
+                HorizontalList(
+                  beerList: beerList,
+                ),
+                const Divider(
+                  indent: 15,
+                  endIndent: 15,
+                  thickness: 2,
+                  color: Color.fromARGB(255, 71, 71, 71),
+                ),
+                HorizontalList(
+                  beerList: beerList,
+                ),
+                const Divider(
+                  indent: 15,
+                  endIndent: 15,
+                  thickness: 2,
+                  color: Color.fromARGB(255, 71, 71, 71),
+                ),
+              ],
             ),
           ),
-        ),
-        SizedBox(
-          height: 150,
-          width: 10,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: 10,
-            itemBuilder: (context,index){
-              return InfoWidget_1(beer: beerList[index]);
-           },
-          ),
-        ),
-      ],
+        );
+      },
     );
   }
 }
