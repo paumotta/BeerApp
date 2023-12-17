@@ -26,6 +26,81 @@ class HomePage extends StatelessWidget {
           );
         }
         final beerList = snapshot.data!;
+        return SafeArea(
+                child: Container(
+                  margin: const EdgeInsets.only(right: 15,left: 15,top: 15),
+                  child: 
+                    ListView(
+                      children: [
+                        HorizontalList(beerList: beerList),
+                      ],
+                    ),
+                    
+                ),
+              
+            
+        );
+      },
+    );
+  }
+}
+
+class HorizontalList extends StatelessWidget {
+  const HorizontalList({
+    super.key,
+    required this.beerList,
+  });
+
+  final List<Beer> beerList;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        const Padding(
+          padding: EdgeInsets.only(bottom:10),
+          child: Text(
+            'Categoria',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 150,
+          width: 10,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: 10,
+            itemBuilder: (context,index){
+              return InfoWidget_1(beer: beerList[index]);
+           },
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+
+/* Widget funcional
+@override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+      future: apiLoadBeer(),
+      builder: (
+        BuildContext context,
+        AsyncSnapshot<List<Beer>> snapshot,
+      ) {
+        if (!snapshot.hasData) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        }
+        final beerList = snapshot.data!;
         return ListView(
           scrollDirection: Axis.vertical,
           children: [
@@ -132,4 +207,4 @@ class HomePage extends StatelessWidget {
       },
     );
   }
-}
+*/
