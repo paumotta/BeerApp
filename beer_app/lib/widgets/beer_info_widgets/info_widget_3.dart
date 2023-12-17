@@ -1,5 +1,4 @@
 import 'package:beer_app/model/beer_type.dart';
-import 'package:beer_app/widgets/all_pages.dart';
 import 'package:flutter/material.dart';
 
 class InfoWidget_3 extends StatelessWidget {
