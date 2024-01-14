@@ -3,7 +3,6 @@ import 'package:beer_app/widgets/api.dart';
 import 'package:beer_app/widgets/beer_info_widgets/categoria_list_info.dart';
 
 import 'package:beer_app/widgets/beer_info_widgets/info_widget_2.dart';
-import 'package:beer_app/widgets/beer_info_widgets/info_widget_3.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
