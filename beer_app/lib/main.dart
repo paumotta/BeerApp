@@ -43,8 +43,7 @@ class _MyBeerAppState extends State<MyBeerApp> {
                   child: CircularProgressIndicator(),
                 );
               }
-              final beerList =
-                  snapshot.data!; //CAMBIAR A INFO MAIN GENERALIZADO
+              final beerList = snapshot.data!;
               return pages[actualPage];
             }),
         bottomNavigationBar: BottomNavigationBar(
