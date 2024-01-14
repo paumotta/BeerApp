@@ -18,30 +18,30 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       backgroundColor: Colors.amber, // Fondo de pantalla ámbar
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
+            const Icon(
               Icons.lock,
               size: 100.0,
               color: Colors.black,
             ),
             TextField(
               controller: _usuarioController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Usuario',
               ),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             TextField(
               controller: _contrasenaController,
               obscureText: true,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Contraseña',
               ),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
                 if (_usuarioController.text == 'manolo' &&
@@ -54,9 +54,9 @@ class _LoginPageState extends State<LoginPage> {
                   showDialog(
                     context: context,
                     builder: (context) => AlertDialog(
-                      title: Text('Error de inicio de sesión'),
+                      title: const Text('Error de inicio de sesión'),
                       content:
-                          Text('Credenciales incorrectas. Intenta de nuevo.'),
+                          const Text('Credenciales incorrectas. Intenta de nuevo.'),
                       actions: [
                         TextButton(
                           onPressed: () {
@@ -70,11 +70,11 @@ class _LoginPageState extends State<LoginPage> {
                 }
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.black, // Fondo a negro
-                onPrimary: Colors.white, // Texto a blanco
+                primary: Colors.black, 
+                onPrimary: Colors.white, 
               ),
               child:
-                  Text('Iniciar Sesión', style: TextStyle(color: Colors.white)),
+                  const Text('Iniciar Sesión', style: TextStyle(color: Colors.white)),
             ),
           ],
         ),
@@ -100,53 +100,108 @@ class _FavPageState extends State<FavPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.deepOrange, // Fondo de pantalla ámbar
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.lock,
-              size: 100.0,
-              color: Colors.black,
-            ),
-            SizedBox(height: 20.0),
-            if (_usuarioController.text == 'sr' &&
-                _contrasenaController.text == '76')
-              Text(
-                '¡Bienvenido!',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+
+              const Icon(
+                Icons.lock,
+                size: 100,
+                color: Colors.white,
               ),
-            SizedBox(height: 20.0),
-            TextField(
-              controller: _usuarioController,
-              decoration: InputDecoration(
-                labelText: 'Usuario',
+
+              const SizedBox(height: 20.0),
+              if (_usuarioController.text == 'sr' &&
+                  _contrasenaController.text == '76')
+                const Text(
+                  '¡Bienvenido!',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+
+              const SizedBox(height: 20.0),
+
+              TextField(
+                controller: _usuarioController,
+                decoration: const InputDecoration(
+                  labelText: 'Usuario',
+                ),
               ),
-            ),
-            SizedBox(height: 20.0),
-            TextField(
-              controller: _contrasenaController,
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: 'Contraseña',
+
+              const SizedBox(height: 20.0),
+
+              TextField(
+                controller: _contrasenaController,
+                obscureText: true,
+                decoration: const InputDecoration(
+                  labelText: 'Contraseña',
+                ),
               ),
-            ),
-            SizedBox(height: 20.0),
-            ElevatedButton(
-              onPressed: () {
-                print(
-                    'Usuario en la página: ${_usuarioController.text}');
-                print(
-                    'Contraseña en la página: ${_contrasenaController.text}');
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.black,
+
+              const SizedBox(height: 20.0),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      'Forgot Password?',
+                      style: TextStyle(color: Colors.grey[600]),
+                    ),
+                  ],
+                ),
               ),
-              child:
-                  Text('INICIAR SESION', style: TextStyle(color: Colors.white)),
-            ),
-          ],
+
+              
+              ElevatedButton(
+                onPressed: () {
+                  print(
+                      'Usuario en la página: ${_usuarioController.text}');
+                  print(
+                      'Contraseña en la página: ${_contrasenaController.text}');
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                ),
+                child:
+                    const Text('INICIAR SESION', style: TextStyle(color: Colors.black)),
+              ),
+
+               const SizedBox(height: 30),
+
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Divider(
+                        thickness: 0.5,
+                        color: Colors.grey[700],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Text(
+                        'Or continue with Google',
+                        style: TextStyle(color: Colors.grey[700]),
+                      ),
+                    ),
+                    Expanded(
+                      child: Divider(
+                        thickness: 0.5,
+                        color: Colors.grey[700],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              
+            ],
+          ),
         ),
       ),
     );
