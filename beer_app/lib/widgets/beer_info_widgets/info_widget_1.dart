@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:beer_app/model/beer_type.dart';
 import 'package:flutter/material.dart';
 
@@ -42,13 +44,8 @@ class InfoWidget_1 extends StatelessWidget {
                     beer.name,
                     style: const TextStyle(fontSize: 10.0),
                   ),
-                  const Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                    child: Icon(
-                      Icons.bookmark_border,
-                      size: 12,
-                    ),
-                  )
+                  
+                  
                 ],
               ),
             )

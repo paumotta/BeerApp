@@ -9,6 +9,7 @@ class BeerInfoPage extends StatefulWidget {
 }
 
 class _BeerInfoPageState extends State<BeerInfoPage> {
+  int contador = 0;
   @override
   Widget build(BuildContext context) {
     final data =
@@ -25,7 +26,9 @@ class _BeerInfoPageState extends State<BeerInfoPage> {
                 data["name"].toString(),
                 style: const TextStyle(fontSize: 26.0),
               ),
-               const Row( mainAxisSize: MainAxisSize.min,children: [FavoriteButton()],
+              const Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [FavoriteButton()],
               )
             ],
           )
@@ -44,45 +47,37 @@ class _BeerInfoPageState extends State<BeerInfoPage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.all(6),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      data["name"].toString(),
-                      style: const TextStyle(fontSize: 26.0),
-                    ),
-                  ],
+                padding: const EdgeInsetsDirectional.only(top: 25, bottom: 15),
+                child: Text(
+                  data["name"].toString(),
+                  style: const TextStyle(
+                      fontSize: 26.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontStyle: FontStyle.italic),
                 ),
               ),
-              const Text(
-                "Informacion",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
+              const Divider(
+                indent: 15,
+                endIndent: 15,
+                thickness: 1,
+                color: Color.fromARGB(255, 71, 71, 71),
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 15),
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 255, 162, 134),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(25),
+                  ),
+                ),
+                padding: const EdgeInsets.all(15),
+                child: const Text(
+                  'Our flagship beer that kick started the craft beer revolution. This is James and Martin'
+                  's original take on an American IPA, subverted with punchy New Zealand hops.'
                 ),
               ),
-              const Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10, 20, 10, 10),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Lorem ipsum dolor sit amet consectetur adipiscing elit maecenas lacus, vestibulum natoque ac tincidunt cursus suscipit scelerisque posuere, luctus egestas blandit duis eget congue nam quisque. Curabitur laoreet cras nec mollis nisl ac convallis nullam, urna et pharetra blandit vulputate nostra pellentesque, rhoncus elementum massa interdum inceptos integer enim. Porta eu augue tincidunt dapibus praesent posuere massa eget tortor, enim mollis dignissim congue ac sociis torquent metus, ante cras phasellus neque mi vehicula nisi curabitur.\n\n'
-                      'Netus quisque porttitor conubia posuere vestibulum elementum lacinia penatibus fames consequat tristique, phasellus potenti sodales sociis primis donec quis diam dis erat. Leo per rhoncus malesuada mollis nibh felis inceptos habitant cubilia arcu sagittis eget, nulla natoque lacinia ultrices imperdiet pretium a congue dignissim fermentum vel. Dapibus id mus inceptos rhoncus in proin eget aenean ultricies, vel fringilla fermentum cubilia accumsan at pellentesque rutrum nostra, ante nam primis porttitor varius auctor himenaeos mollis. Pellentesque nisi congue ridiculus faucibus phasellus eleifend proin class, lobortis hac libero rutrum urna quis semper turpis nec, posuere lectus facilisi massa nam porttitor dis.',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                ),
-              ),
+             
             ],
           ),
         ),

@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:beer_app/model/beer_type.dart';
 import 'package:flutter/material.dart';
 
@@ -38,8 +40,8 @@ class InfoWidget_2 extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    "${beer.name}",
-                    style: TextStyle(fontSize: 10.0),
+                    beer.name,
+                    style: const TextStyle(fontSize: 10.0),
                   ),
                 ],
               ),
