@@ -111,8 +111,8 @@ class _FavPageState extends State<FavPage> {
               color: Colors.black,
             ),
             SizedBox(height: 20.0),
-            if (_usuarioController.text == 'manolo' &&
-                _contrasenaController.text == '1234')
+            if (_usuarioController.text == 'sr' &&
+                _contrasenaController.text == '76')
               Text(
                 '¡Bienvenido!',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
