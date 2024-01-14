@@ -28,9 +28,10 @@ class HorizontalList extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(
+        Container(
           height: 150,
           width: 10,
+          margin: const EdgeInsets.only(right: 15),
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: 10,
