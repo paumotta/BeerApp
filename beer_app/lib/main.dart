@@ -22,12 +22,10 @@ class _MyBeerAppState extends State<MyBeerApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: 'Home',
-      routes:  {
-        'home': ( _ ) => const HomePage(),
-        'my_beer_info': ( _ ) => const BeerInfoPage(),
+      routes: {
+        'home': (_) => const HomePage(),
+        'my_beer_info': (_) => const BeerInfoPage(),
       },
-
-      
       home: Scaffold(
         backgroundColor: Colors.deepOrange,
         appBar: AppBar(
@@ -45,7 +43,8 @@ class _MyBeerAppState extends State<MyBeerApp> {
                   child: CircularProgressIndicator(),
                 );
               }
-              final beerList = snapshot.data!; //CAMBIAR A INFO MAIN GENERALIZADO
+              final beerList =
+                  snapshot.data!; //CAMBIAR A INFO MAIN GENERALIZADO
               return pages[actualPage];
             }),
         bottomNavigationBar: BottomNavigationBar(
@@ -59,7 +58,8 @@ class _MyBeerAppState extends State<MyBeerApp> {
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
             BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-            BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favourites'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.favorite), label: 'Favourites'),
           ],
         ),
       ),

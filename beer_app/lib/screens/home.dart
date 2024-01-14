@@ -9,9 +9,7 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   const HomePage({
     super.key,
-    /*required this.beerList*/
   });
-  // final beerList;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +32,7 @@ class HomePage extends StatelessWidget {
               children: [
                 HorizontalList(
                   beerList: beerList,
+                  name: "Favoritos",
                 ),
                 const Divider(
                   indent: 15,
@@ -44,6 +43,7 @@ class HomePage extends StatelessWidget {
                 SizedBox(height: 200, child: InfoWidget_2(beer: beerList[11])),
                 HorizontalList(
                   beerList: beerList,
+                  name: "Categoria",
                 ),
                 const Divider(
                   indent: 15,
@@ -53,6 +53,7 @@ class HomePage extends StatelessWidget {
                 ),
                 HorizontalList(
                   beerList: beerList,
+                  name: "Categoria",
                 ),
                 const Divider(
                   indent: 15,
@@ -62,6 +63,7 @@ class HomePage extends StatelessWidget {
                 ),
                 HorizontalList(
                   beerList: beerList,
+                  name: "Categoria",
                 ),
                 const Divider(
                   indent: 15,

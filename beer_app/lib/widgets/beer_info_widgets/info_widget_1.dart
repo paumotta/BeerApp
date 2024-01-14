@@ -13,7 +13,10 @@ class InfoWidget_1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        Navigator.pushNamed(context, 'my_beer_info');
+        Navigator.pushNamed(context, 'my_beer_info', arguments: <String, String>{
+          "name": beer.name,
+          "imgurl": beer.beerUrl,
+        });
       },
       style: ElevatedButton.styleFrom(
         padding: const EdgeInsets.all(15),
@@ -36,7 +39,7 @@ class InfoWidget_1 extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "${beer.name}",
+                    beer.name,
                     style: const TextStyle(fontSize: 10.0),
                   ),
                   const Padding(
