@@ -12,8 +12,11 @@ class InfoWidget_2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        // Acción al presionar el botón
-         Navigator.pushNamed(context, 'my_beer_info');
+        Navigator.pushNamed(context, 'my_beer_info',
+            arguments: <String, String>{
+              "name": beer.name,
+              "imgurl": beer.beerUrl,
+            });
       },
       style: ElevatedButton.styleFrom(
         padding: const EdgeInsets.all(15),
